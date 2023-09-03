@@ -23,7 +23,7 @@ function onSubmite(e) {
     createPromise(i, delay).then(onSucces).catch(onError);
     delay += step;
   }
-  formElemenet.reset
+  formElement.reset();
 }
 function onSucces({ position, delay }) {
   Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
