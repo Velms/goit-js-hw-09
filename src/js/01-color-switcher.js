@@ -15,6 +15,7 @@ function onStart() {
   }, 1000);
 }
 function onStop() {
+  stopBtnEl.removeAttribute('disabled');
   refs.startBtn.disabled = false;
   clearInterval(intervalId);
 }
