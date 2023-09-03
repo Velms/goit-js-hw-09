@@ -11,7 +11,6 @@ const hours = document.querySelector('span[data-hours]');
 const days = document.querySelector('span[data-days]');
 
 btnStart.disabled = true;
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -28,7 +27,6 @@ const options = {
 };
 
 flatpickr(text, options);
-
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -55,6 +53,7 @@ function addLeadingZero(value) {
 btnStart.addEventListener('click', () => {
   let timer = setInterval(() => {
     let countdown = new Date(text.value) - new Date();
+    text.disabled = true;
     btnStart.disabled = true;
     if (countdown >= 0) {
       let timeObject = convertMs(countdown);
