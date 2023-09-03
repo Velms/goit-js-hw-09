@@ -8,14 +8,17 @@ refs.stopBtn.addEventListener('click', onStop);
 
 let intervalId = null;
 
+refs.stopBtn.disabled = true;
+
 function onStart() {
+  refs.stopBtn.disabled = false;
   refs.startBtn.disabled = true;
   intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 }
 function onStop() {
-  stopBtnEl.removeAttribute('disabled');
+  refs.stopBtn.disabled = true;
   refs.startBtn.disabled = false;
   clearInterval(intervalId);
 }
